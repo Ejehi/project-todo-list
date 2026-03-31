@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  height: 100vh;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: 100%; 
+}
+
+#main-content {
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
+#add-project, #add-task, .dropbtn {
+    max-width: 200px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  div:hover {
+    cursor: pointer;
+    background-color: rgb(33, 31, 31);
+    color: white;
+  }
+}
+
+.dropdown-content div {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: grey;
+  cursor: pointer;
+}
+
+#add-project:hover, #add-task:hover {
+    scale: 1.05;
+    cursor: pointer;
+}
+
+#sidebar {
+    background-color: #d8bfd8;
+    padding: 10px;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+    justify-content: center;
+
+    button {
+        width: 100px;
+        padding: 15px;
+        justify-self: center;
+        background-color: rgb(61, 60, 60);
+        border: none;
+        border-radius: 8px;
+        color: white;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        justify-self: end;
+    }
+
+    img:hover {
+        cursor: pointer;
+    }
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+
+.font-size-20 {
+    font-size: 20px;
+}
+
+.font-size-30 {
+    font-size: 30px;
+}
+
+
+.heading {
+    font-size: 24px;
+    justify-self: center;
+}
+
+input[type="text"] {
+    width: 250px;
+    height: 40px;
+}
+
+input::placeholder {
+  color: gray;
+  font-size: 18px;
+}
+
+dialog {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    background-color: #d8bfd8 ;
+    border: none;
+    padding: 3.5rem;
+}
+
+.priority, #due-date {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#low {
+  accent-color: green;
+}
+
+#high {
+  accent-color: red;
+}
+
+.childTaskContainer {
+    margin: 20px;
+    max-width: 500px;
+    display: grid;
+    gap: 10px;
+    justify-items: start;
+    align-items: center;
+    grid-template-areas: 
+    "check-box title title title title title"
+    ". description description due-date priority trash"
+    ;
+}
+
+.check-box {
+    width: 25px;
+    height: 25px;
+    border: 2px solid black;
+    grid-area: check-box;
+}
+
+.task-title {
+    grid-area: title;
+    font-size: 20px;
+}
+
+.task-description {
+    grid-area: description;
+}
+.task-duedate {
+    grid-area: due-date;
+}
+.task-priority {
+    text-align: center;
+    min-width: 50px;
+    padding: 2px 5px;
+    background-color: rgb(201, 196, 196);
+    border-radius: 10px;
+    grid-area: priority;
+    font-weight: 600;
+}
+
+.trash {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    grid-area: trash;
+}
+
+.trash:hover {
+    cursor: pointer;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-green {
+    color: green;
+}
+
+.project-preview {
+    display: flex;
+    align-items: center;
+}

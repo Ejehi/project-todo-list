@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <div id="add-project">
+                <img src="../images/add.png" alt="add user">
+                <div>New Project</div>
+            </div>
+
+            <div id="add-task">
+                <img src="../images/add.png" alt="add task">
+                <div>Add Task</div>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn">
+                    <img src="../images/folder.png" alt="my projects">
+                    <div>My Projects</div>
+                </div>
+                <div class="dropdown-content"></div>
+            </div>
+            
+        </div>
+        <div id="main-content">
+        </div>
+    </div>
+
+    <dialog id="project-dialog">
+        <form id="new-project-form">
+            <img src="../images/close.png" alt="close" id="close-project-dialog">
+            <div class="heading">New Project</div>
+            <input type="text" id="project-name" name="project-name" placeholder = "Project Name..." required>
+            <button type="submit" id="submit-project-info" class="font-size-20">Submit</button>
+        </form>
+    </dialog>
+
+    <dialog id="task-dialog">
+        <form id="new-task-form" class="font-size-18">
+            <img src="../images/close.png" alt="close" id="close-task-dialog">
+
+            <div class="heading">New Task</div>
+
+            <input type="text" id="task-title" name="task-title" placeholder = "Title..." required>
+            <input type="text" id="task-description" name="task-description" placeholder = "Description..." required>
+
+            <label for="project-list">Choose a Project:</label>
+            <select id="project-list" name="items" required>
+            </select>
+
+            <div id="due-date">
+                <label for="date">Due date</label>
+                <input type="date" id="date" name="date" class="font-size-18" required>
+            </div>
+
+            <div class="priority">
+                <label for="high">High Priority</label>
+                <input type="radio" id="high" name="priority" value="high" class="font-size-20" required>
+            </div>
+
+            <div class="priority">
+                <label for="low">Low Priority</label>
+                <input type="radio" id="low" name="priority" value="low" required>
+            </div>
+            
+            <button type="submit" id="submit-task-info" class="font-size-20">Submit</button>
+        </form>
+    </dialog>
+</body>
+</html>
